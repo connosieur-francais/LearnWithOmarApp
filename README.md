@@ -49,13 +49,9 @@ WIP
 
 | Profile | Role | Contact |
 | --- | --- | --- |
-| **Omar** | Developer | [GitHub Profile](https://www.google.com/search?q=https://github.com/Omar-Al-Hussein) |
-| **Eason** | Developer | [GitHub Profile](https://www.google.com/search?q=https://github.com/connosieur-francais) |
+| **Omar** | Developer | [GitHub Profile](https://github.com/Omar-Al-Hussein) |
+| **Eason** | Developer | [GitHub Profile](https://github.com/connosieur-francais) |
 
 ### Contributing
 
-We welcome contributions! Please read our [CONTRIBUTING.md](https://www.google.com/search?q=docs/CONTRIBUTING.md) to learn about our coding standards and the process for submitting pull requests.
-
----
-
-**Would you like me to generate the `CONTRIBUTING.md` file or the `schema.sql` template to go along with this?**
+WIP
