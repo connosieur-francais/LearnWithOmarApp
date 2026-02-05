@@ -49,7 +49,7 @@ WIP
 
 | Profile | Role | Contact |
 | --- | --- | --- |
-| **Omar** | Developer | [GitHub Profile](https://www.google.com/search?q=https://github.com/Omar-Al_Hussein) |
+| **Omar** | Developer | [GitHub Profile](https://www.google.com/search?q=https://github.com/Omar-Al-Hussein) |
 | **Eason** | Developer | [GitHub Profile](https://www.google.com/search?q=https://github.com/connosieur-francais) |
 
 ### Contributing
