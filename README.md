@@ -1,23 +1,16 @@
 # LearnWithOmar 🎓
 
-**LearnWithOmar** is a streamlined private tutoring portal and learning roadmap system. It bridges the gap between structured curriculum and personalized mentorship, allowing tutors to define clear paths for students while managing the administrative side of private education in one place.
+**LearnWithOmar** WIP WIP WIP
 
 ---
 
 ## ✨ What it Does
 
-LearnWithOmar provides a centralized environment for both tutors and students to stay aligned on educational goals.
-
-* **Visual Roadmaps:** Transforms complex learning objectives into digestible, step-by-step paths.
-* **Session Management:** Simplifies the scheduling and tracking of private tutoring lessons.
-* **Progress Dashboard:** Offers students a clear view of their current standing and upcoming milestones.
-* **Resource Central:** A dedicated space for sharing files, notes, and specific learning materials.
+WIP
 
 ## 🚀 Why it’s Useful
 
-* **Clarity for Students:** No more "What are we doing today?"—the roadmap provides instant context.
-* **Efficiency for Tutors:** Reduces overhead by automating progress tracking and resource distribution.
-* **Modern Tech Stack:** Built with a lightweight **PHP/MySQL** architecture, making it easy to deploy on most hosting environments without heavy server requirements.
+WIP
 
 ## 🛠️ Getting Started
 
@@ -38,22 +31,11 @@ cd learn-with-omar
 
 
 2. **Database Configuration**
-* Create a new MySQL database (e.g., `learn_with_omar`).
-* Import the schema from `database/schema.sql`.
-* Rename `config.example.php` to `config.php` and update your credentials:
-
-
-```php
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'learn_with_omar');
-define('DB_USER', 'your_username');
-define('DB_PASS', 'your_password');
-
-```
+WIP
 
 
 3. **Launch**
-Move the project to your `htdocs` or `www` folder and visit `http://localhost/learn-with-omar`.
+WIP
 
 ## 🆘 Get Help
 
