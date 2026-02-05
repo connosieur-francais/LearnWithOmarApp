@@ -1,3 +1,7 @@
+<?php
+    include $_SERVER['DOCUMENT_ROOT'].'/src/setup/conn.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,8 +12,6 @@
 </head>
 
 <body>
-    <div class="content-container">
-
-    </div>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/src/components/navigation_bar.php'; ?>
 </body>
 </html>
