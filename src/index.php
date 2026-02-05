@@ -4,14 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LearnWithOmar</title>
 </head>
 
 <body>
-    <div class="navigation-bar">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-    </div>
+    
     <div class="content-container">
         
     </div>
