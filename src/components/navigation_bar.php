@@ -10,7 +10,6 @@
 <body>
     <ul>
         <li><a href="LearnWithOmarApp\src\index.php">Home</a></li>
-        <div class="Book a Class">Book a Class now!</div>
     </ul>
 </body>
 

@@ -1,3 +1,7 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'] . '/LearnWithOmarApp/src/setup/conn.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,12 +9,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnWithOmar</title>
+    <style>
+        body {
+            width: 1440px;
+            height: 1024px;
+            background: var(--Gradients-Light-Blue-1, linear-gradient(135deg, #176AB1 0%, #CBD8F1 100%));
+        }
+    </style>
 </head>
 
 <body>
-    
-    <div class="content-container">
-        
-    </div>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/LearnWithOmarApp/src/components/navigation_bar.php'; ?>
 </body>
+
 </html>
