@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/src/setup/conn.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/LearnWithOmarApp/src/setup/conn.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/src/setup/conn.php';
 </head>
 
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/src/components/navigation_bar.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/LearnWithOmarApp/src/components/navigation_bar.php'; ?>
 </body>
 
 </html>

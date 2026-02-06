@@ -1,10 +1,14 @@
-<!-- Connects to the database -->
-
 <?php
-    $connect = mysqli_connect("localhost", "root", "");
+    // Parameters: host, username, password, database name
+    $connect = mysqli_connect("localhost", "root", "", "learnwithomar");
+
+    // Check connection
     if (!$connect) {
-        die('Connection to database failed.' . mysqli_connect_error());
+        die("Connection failed: " . mysqli_connect_error());
     }
-    mysqli_select_db($connect, 'ecoquest');
+
     session_start();
+    
+    // Set charset to avoid emoji/special character issues
+    mysqli_set_charset($connect, "utf8mb4");
 ?>

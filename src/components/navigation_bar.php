@@ -12,9 +12,9 @@ This file contains the HTML code for the header UI.
 </head>
 <body>
     <ul>
-        <li><a href="/src/index.php">Home</a></li>
-        <li><a href="/src/pages/lessons.php">Lessons</a></li>
-        <li><a href="/src/pages/profile.php">Profile</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Lessons</a></li>
+        <li><a href="#">Profile</a></li>
     </ul>
 </body>
 </html>
