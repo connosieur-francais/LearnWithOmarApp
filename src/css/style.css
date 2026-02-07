@@ -1,1 +1,25 @@
 /* This css file will determine the look and feel of the entire system*/
+
+body {
+  width: 1440px;
+  height: 1024px;
+  background: var(
+    --Gradients-Light-Blue-1,
+    linear-gradient(135deg, #176ab1 0%, #cbd8f1 100%)
+  );
+}
+
+.login_button {
+  width: fit-content;
+  height: fit-content;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 100vw;
+  background-color: antiquewhite;
+}
+
+.login_button:hover {
+  background-color: bisque;
+}

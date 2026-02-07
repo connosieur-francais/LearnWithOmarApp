@@ -1,3 +1,5 @@
+<!-- This is the home page (Anonymous User) -->
+
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/LearnWithOmarApp/src/setup/conn.php';
 ?>
@@ -9,17 +11,19 @@ include $_SERVER['DOCUMENT_ROOT'] . '/LearnWithOmarApp/src/setup/conn.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnWithOmar</title>
-    <style>
-        body {
-            width: 1440px;
-            height: 1024px;
-            background: var(--Gradients-Light-Blue-1, linear-gradient(135deg, #176AB1 0%, #CBD8F1 100%));
-        }
-    </style>
+    <link rel="stylesheet" href="/src/css/style.css">
 </head>
 
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/LearnWithOmarApp/src/components/navigation_bar.php'; ?>
+    <div class="login_button">
+        <button type="button" onClick="goToLogin()">Log In</button> <!-- Placeholder login for now -->
+    </div>
+
+    <script>
+        function goToLogin() {
+            window.location.href = "/LearnWithOmarApp/src/pages/login.php";
+        }
+    </script>
 </body>
 
 </html>
