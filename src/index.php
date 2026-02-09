@@ -1,7 +1,7 @@
 <!-- This is the home page (Anonymous User) -->
 
 <?php
-include __DIR__ . '/setup/conn.php';
+include __DIR__ . 'setup/conn.php';
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ include __DIR__ . '/setup/conn.php';
 
     <script>
         function goToLogin() {
-            window.location.href = "../src/pages/loginPage.php";
+            window.location.href = "../src/pages/anon/loginPage.php";
         }
     </script>
 </body>

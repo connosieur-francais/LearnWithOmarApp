@@ -30,6 +30,8 @@
     0 1px 0 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.05),
     0 10px 10px 0 rgba(0, 0, 0, 0.1);
   --input-glow: 0 0 8px rgba(0, 122, 255, 0.3);
+  --error-bg: rgba(255, 69, 58, 0.2);
+  --error-text: #ff453a;
 }
 
 * {
@@ -50,81 +52,10 @@ body {
   overflow: hidden;
 }
 
-.content-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-}
-
-.title-form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-  gap: 12px;
-  width: 90%;
-  max-width: 600px;
-  padding: 40px;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border-radius: 32px;
-  border: var(--glass-border);
-  box-shadow: var(--shadow-main);
-  
-  position: relative; /* Create stacking context */
-  z-index: 1;         /* Lift it above the background */
-}
-
-.title-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-}
-
-#title {
-  text-align: center;
-  font-size: 40px;
-  font-weight: 600;
-  letter-spacing: -1.6px;
-  user-select: none;
-  background: var(--text-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.subtitle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-#subtitle {
-  user-select: none;
-  color: rgba(0, 0, 0, 0.7);
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-}
-
-.subtitle object {
-  user-select: none;
-  display: block;
-  width: 24px;
-  height: auto;
-  pointer-events: none;
-}
-
-/* Ensure BOTH glows are strictly behind everything */
-.background-glow1, .background-glow2 {
+.background-glow1,
+.background-glow2 {
   position: fixed;
-  z-index: -10; /* Force them to the very back */
+  z-index: -10;
   pointer-events: none;
 }
 
@@ -134,7 +65,12 @@ body {
   width: 1054px;
   height: 1054px;
   border-radius: 50%;
-  background: conic-gradient(from 177deg at 50% 50%, #2b6ed1 59.13deg, #062550 246.64deg, #88a3c7 360deg);
+  background: conic-gradient(
+    from 177deg at 50% 50%,
+    #2b6ed1 59.13deg,
+    #062550 246.64deg,
+    #88a3c7 360deg
+  );
   filter: blur(100px);
   transform: scale(0.8);
 }
@@ -150,6 +86,54 @@ body {
   transform: scale(0.8);
 }
 
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.title-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 12px;
+  width: 90%;
+  max-width: 500px;
+  padding: 40px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: 32px;
+  border: var(--glass-border);
+  box-shadow: var(--shadow-main);
+  position: relative;
+  z-index: 1;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -1.2px;
+  user-select: none;
+  background: var(--text-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .form-container {
   width: 100%;
 }
@@ -157,18 +141,15 @@ body {
 .form-container form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 28px;
+  gap: 16px;
   width: 100%;
-  padding: 20px 0 10px 0; /* Reduced bottom padding to 10px */
 }
 
-.form-container input,
+.form-container input:not([type="radio"]),
 .form-container button {
   width: 100%;
   padding: 12px;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 15px;
   border-radius: 8px;
   border: var(--glass-border);
   backdrop-filter: blur(10px);
@@ -176,7 +157,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.form-container input {
+.form-container input:not([type="radio"]) {
   background: var(--input-bg);
   color: rgba(0, 0, 0, 0.8);
 }
@@ -193,37 +174,70 @@ body {
 }
 
 .form-container input::placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.4);
 }
 
-.form-container input:focus::placeholder {
-  color: rgba(0, 0, 0, 0.2);
+.radio-btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 10px 0;
 }
 
-.form-container .icons {
-  position: absolute;
+.radio-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: var(--glass-border);
+  flex: 1;
+  transition: 0.3s;
 }
 
-.form-container .icons i {
-  position: relative;
+.radio-btn label {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
 }
 
+.radio-btn input[type="radio"] {
+  cursor: pointer;
+  accent-color: var(--primary-btn);
+}
+
+/* Remove the shadow and glow from radio buttons */
+.form-container input[type="radio"] {
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  width: auto !important; /* Prevents radio from stretching */
+  margin-right: 8px;
+}
+
+/* Remove the blue ring/shadow when clicking or focusing */
+.form-container input[type="radio"]:focus,
+.form-container input[type="radio"]:active {
+  outline: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+/* Optional: Subtle scale effect instead of a shadow */
+.form-container input[type="radio"]:checked {
+  transform: scale(1.1);
+  accent-color: var(--primary-btn);
+}
 .form-container button {
   position: relative;
   z-index: 20;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: var(--primary-btn);
   color: #fff;
+  font-weight: 600;
   cursor: pointer;
   border: none;
-
-  user-select: none;
-  -webkit-user-select: none; /* For Safari/Chrome */
-  -moz-user-select: none;    /* For Firefox */
-  -ms-user-select: none;     /* For IE/Edge */
-  -webkit-user-drag: none;
+  margin-top: 10px;
 }
 
 .form-container button:hover {
@@ -232,15 +246,56 @@ body {
   box-shadow: 0 5px 15px rgba(0, 122, 255, 0.4);
 }
 
-.form-container button:active {
-  transform: translateY(0);
+.error-msg {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background: var(--error-bg);
+  border: 1px solid rgba(255, 69, 58, 0.3);
+  color: var(--error-text);
+  font-size: 13px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-.form-container #return-link {
-  background: none;
-  color: rgb(0, 60, 255);
-  box-shadow: none;
-  cursor: pointer;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+  pointer-events: none;
+}
+
+.footer-container .footer {
+  pointer-events: auto;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.success-msg {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    background: rgba(48, 209, 88, 0.2); /* Soft green glass */
+    border: 1px solid rgba(48, 209, 88, 0.3);
+    color: #30d158; /* iOS-style green */
+    font-size: 13px;
+    text-align: center;
+    backdrop-filter: blur(10px);
 }
 
 /* Container to hold the input and the icon */
@@ -280,37 +335,4 @@ body {
 
 .password-wrapper input {
   padding-right: 45px !important;
-}
-
-/* Fix the footer hit-box */
-.footer-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 10px;
-  pointer-events: none; /* Make the container 'invisible' to clicks */
-}
-
-.footer-container .footer {
-  pointer-events: auto; /* Allow the copyright text to be interactive if needed */
-}
-
-.error-msg {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    background: rgba(255, 69, 58, 0.2); /* Soft red glass */
-    border: 1px solid rgba(255, 69, 58, 0.3);
-    color: #ff453a; /* iOS-style bright red */
-    font-size: 14px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
 }

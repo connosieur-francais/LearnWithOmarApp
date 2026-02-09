@@ -1,2 +1,0 @@
-<!-- Handles the login logic -->
-
