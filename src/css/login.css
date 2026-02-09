@@ -236,6 +236,13 @@ body {
   transform: translateY(0);
 }
 
+.form-container #return-link {
+  background: none;
+  color: rgb(0, 60, 255);
+  box-shadow: none;
+  cursor: pointer;
+}
+
 /* Container to hold the input and the icon */
 .password-wrapper {
   position: relative;

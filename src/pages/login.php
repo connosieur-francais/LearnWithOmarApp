@@ -35,7 +35,7 @@
                     </div>
                     <button type="submit" name="login">Log In</button>
                     <p>Don't have an account?
-                        <a href="../../src/index.php">Return to Home Page</a>
+                        <a id="return-link" href="../../src/index.php">Return to Home Page</a>
                     </p>
                 </form>
             </div>
