@@ -1,34 +1,54 @@
 <?php
-
 session_start();
-require_once __DIR__ . '/../setup/conn.php'; // Ensure the slash is here
+require_once __DIR__ . '/../setup/conn.php';
+
+
 
 if (isset($_POST['login'])) {
-    $email = $_POST['email'];
+    $email = trim($_POST['email']); // Trim whitespace
     $password = $_POST['password'];
 
-    $result = $conn->query("SELECT * FROM users WHERE email = '$email'");
+    // 1. Use Prepared Statements (Safer & more reliable)
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
     if ($result->num_rows > 0) {
         $user = $result->fetch_assoc();
+        
+        // 2. Debug: Check if password verify works
         if (password_verify($password, $user['password'])) {
             $_SESSION['name'] = $user['name'];
             $_SESSION['email'] = $user['email'];
 
+            // 3. Proper Switch with breaks
             switch ($user['user_role_id']) {
-                case 1: {
+                case 1:
                     header("Location: ../pages/admin/home.php");
-                } case 2: {
+                    break;
+                case 2:
                     header("Location: ../pages/tutor/home.php");
-                } case 3: {
+                    break;
+                case 3:
                     header("Location: ../pages/student/home.php");
-                } default :
+                    break;
+                default:
                     header("Location: ../index.php");
+                    break;
             }
             exit();
+        } else {
+            // DEBUG: Password mismatch
+            $_SESSION['login-error'] = "Password verify failed. Hash in DB: " . $user['password'];
         }
+    } else {
+        // DEBUG: Email not found
+        $_SESSION['login-error'] = "No user found with that email.";
     }
 
-    $_SESSION['login-error'] = "Incorrect email or password";
     header("Location: ../pages/loginPage.php");
+    exit();
 }
+
 ?>
