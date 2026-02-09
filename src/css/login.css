@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body {
+  margin: 0; /* Important: remove default browser margin */
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* This pulls the form to the vertical center */
+  background: linear-gradient(135deg, #176ab1 0%, #cbd8f1 100%);
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers the H1 and the Subtitle div */
+  gap: 0px;
+  width: 100%;
+}
+
+
+.form-container {
+  display: flex;
+  padding: 20px 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--Content-gap-extra-large, 28px);
+  align-self: stretch;
+}
+
+.login-form {
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+  padding: 40px;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--Content-gap-medium, 12px);
+  align-self: stretch;
+
+  /* Glassmorphism Styles */
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white edge */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.footer-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+#title {
+  margin: 0;
+  text-align: center;
+  /* Headings/Heading 3 */
+  font-family: var(--font, Inter);
+  font-size: var(--heading-3, 40px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.6px;
+
+  background: var(
+    --Light-Mode-Text-Gradient-Primary,
+    linear-gradient(300deg, #000 29.05%, #372054 84.15%, #5420a4 100.44%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#subtitle {
+  color: var(--Light-Mode-Content-Secondary, rgba(0, 0, 0, 0.7));
+
+  /* Body/Medium */
+  font-family: var(--font, Inter);
+  font-size: var(--body, 16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
+
+.subtitle object {
+  display: block;
+  width: 24px;
+  height: auto;
+  pointer-events: none; /* Prevents the SVG from intercepting clicks */
+}
