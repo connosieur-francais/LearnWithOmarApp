@@ -10,8 +10,9 @@
 </head>
 
 <body>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "\LearnWithOmarApp\src\components\wave_background.php"?>
+    <div class="background-glow"></div>
     <div class="container">
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "C:\wamp64\www\LearnWithOmarApp\src\components\wave_background.php"?>
         <div class="login-form">
             <div class="title-container">
                 <h1 id="title">Log In</h1>
