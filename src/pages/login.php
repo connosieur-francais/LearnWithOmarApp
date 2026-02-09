@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login to LearnWithOmar</title>
+    <link rel="stylesheet" href="/LearnWithOmarApp/src/css/style.css">
     <link rel="stylesheet" href="/LearnWithOmarApp/src/css/login.css">
 </head>
 
 <body>
     <div class="container">
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "C:\wamp64\www\LearnWithOmarApp\src\components\wave_background.php"?>
         <div class="login-form">
             <div class="title-container">
                 <h1 id="title">Log In</h1>
@@ -27,7 +29,7 @@
         </div>
         <div class="footer-container">
             <!-- Footer -->
-            <p>Footer</p>
+            <p class="footer">&copy; 2026 Omar H. Personal Tutoring Hub</p>
         </div>
 </body>
 

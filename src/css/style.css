@@ -1,12 +1,16 @@
 /* This css file will determine the look and feel of the entire system*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 body {
-  width: 1440px;
-  height: 1024px;
-  background: var(
-    --Gradients-Light-Blue-1,
-    linear-gradient(135deg, #176ab1 0%, #cbd8f1 100%)
-  );
+  margin: 0; /* Important: remove default browser margin */
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* This pulls the form to the vertical center */
+  background: linear-gradient(135deg, #176ab1 0%, #cbd8f1 100%);
+  overflow: hidden;
 }
 
 .login_button {
@@ -22,4 +26,22 @@ body {
 
 .login_button:hover {
   background-color: bisque;
+}
+
+.footer {
+  /* Footnote/Regular */
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+
+  /* Style */
+  background: var(
+    --Light-Mode-Text-Gradient-Primary,
+    linear-gradient(300deg, #000 29.05%, #372054 84.15%, #5420a4 100.44%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
