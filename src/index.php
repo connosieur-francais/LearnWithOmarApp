@@ -1,7 +1,7 @@
 <!-- This is the home page (Anonymous User) -->
 
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/LearnWithOmarApp/src/setup/conn.php';
+include __DIR__ . '/setup/conn.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/LearnWithOmarApp/src/setup/conn.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnWithOmar</title>
-    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="../src/css/style.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/LearnWithOmarApp/src/setup/conn.php';
 
     <script>
         function goToLogin() {
-            window.location.href = "/LearnWithOmarApp/src/pages/login.php";
+            window.location.href = "../src/pages/login.php";
         }
     </script>
 </body>
