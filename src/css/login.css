@@ -294,23 +294,3 @@ body {
 .footer-container .footer {
   pointer-events: auto; /* Allow the copyright text to be interactive if needed */
 }
-
-.error-msg {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    background: rgba(255, 69, 58, 0.2); /* Soft red glass */
-    border: 1px solid rgba(255, 69, 58, 0.3);
-    color: #ff453a; /* iOS-style bright red */
-    font-size: 14px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
