@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 05, 2026 at 03:55 PM
+-- Generation Time: Feb 09, 2026 at 08:53 PM
 -- Server version: 9.1.0
 -- PHP Version: 8.3.14
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `learnwithomar`
+-- Database: `learnwithomar_db`
 --
 
 -- --------------------------------------------------------
@@ -77,8 +77,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `contact` varchar(255) NOT NULL,
   `user_role_id` int NOT NULL COMMENT 'Foreign Key',
   PRIMARY KEY (`id`),
+  UNIQUE KEY `email_unique` (`email`) USING BTREE,
   KEY `fk_user_role` (`user_role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `password`, `email`, `contact`, `user_role_id`) VALUES
+(1, 'Eason', '$2y$10$XHhKqgvGLxMCcW6clnAkVuuy7XFFsu41Z8y92YY3Srqt.qFyUkLXq', 'eason@gmail.com', '017-344 7704', 1),
+(2, 'Omar', '$2y$10$XHhKqgvGLxMCcW6clnAkVuuy7XFFsu41Z8y92YY3Srqt.qFyUkLXq', 'omar@gmail.com', '012-234 4873', 2),
+(3, 'Student', '$2y$10$XHhKqgvGLxMCcW6clnAkVuuy7XFFsu41Z8y92YY3Srqt.qFyUkLXq', 'student@gmail.com', '012-345 6789', 3);
 
 --
 -- Constraints for dumped tables
@@ -94,7 +104,7 @@ ALTER TABLE `resources`
 -- Constraints for table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `fk_user_role` FOREIGN KEY (`user_role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_user_role` FOREIGN KEY (`user_role_id`) REFERENCES `roles` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
