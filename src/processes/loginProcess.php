@@ -40,7 +40,7 @@ if (isset($_POST['login'])) {
             exit();
         } else {
             // DEBUG: Password mismatch
-            $_SESSION['login-error'] = "Password verify failed. Hash in DB: " . $user['password'];
+            $_SESSION['login-error'] = "Incorrect Password";
         }
     } else {
         // DEBUG: Email not found
