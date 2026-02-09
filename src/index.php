@@ -21,7 +21,7 @@ include __DIR__ . '/setup/conn.php';
 
     <script>
         function goToLogin() {
-            window.location.href = "../src/pages/login.php";
+            window.location.href = "../src/pages/loginPage.php";
         }
     </script>
 </body>

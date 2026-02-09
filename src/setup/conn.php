@@ -1,14 +1,14 @@
-<?php
-    // Parameters: host, username, password, database name
-    $connect = mysqli_connect("localhost", "root", "", "learnwithomar");
+<?php 
 
-    // Check connection
-    if (!$connect) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = 'learnwithomar_db';
 
-    session_start();
-    
-    // Set charset to avoid emoji/special character issues
-    mysqli_set_charset($connect, "utf8mb4");
+$conn = mysqli_connect($host, $user, $password, $database);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 ?>
