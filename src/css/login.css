@@ -1,34 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 :root {
-  --glass-bg: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.6) 0%,
-    rgba(255, 255, 255, 0.5) 100%
-  );
+  --glass-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.5) 100%);
   --glass-border: 1px solid rgba(255, 255, 255, 0.1);
   --glass-blur: blur(20px);
-  --input-bg: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  --input-focus: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(255, 255, 255, 0.4) 100%
-  );
+  --input-bg: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.05) 100%);
+  --input-focus: linear-gradient(0deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 100%);
   --primary-btn: #007aff;
-  --text-gradient: linear-gradient(
-    300deg,
-    #000 29.05%,
-    #372054 84.15%,
-    #5420a4 100.44%
-  );
+  --text-gradient: linear-gradient(300deg, #000 29.05%, #372054 84.15%, #5420a4 100.44%);
   --shadow-main: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
-  --shadow-input:
-    0 1px 0 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.05),
-    0 10px 10px 0 rgba(0, 0, 0, 0.1);
+  --shadow-input: 0 1px 0 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.05), 0 10px 10px 0 rgba(0, 0, 0, 0.1);
   --input-glow: 0 0 8px rgba(0, 122, 255, 0.3);
 }
 
@@ -46,86 +27,16 @@ body {
   justify-content: center;
   width: 100%;
   height: 100vh;
+  background: #176ab1; 
   background: linear-gradient(135deg, #176ab1 0%, #cbd8f1 100%);
   overflow: hidden;
 }
 
-.content-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-}
-
-.title-form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-  gap: 12px;
-  width: 90%;
-  max-width: 600px;
-  padding: 40px;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border-radius: 32px;
-  border: var(--glass-border);
-  box-shadow: var(--shadow-main);
-  
-  position: relative; /* Create stacking context */
-  z-index: 1;         /* Lift it above the background */
-}
-
-.title-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-}
-
-#title {
-  text-align: center;
-  font-size: 40px;
-  font-weight: 600;
-  letter-spacing: -1.6px;
-  user-select: none;
-  background: var(--text-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.subtitle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-#subtitle {
-  user-select: none;
-  color: rgba(0, 0, 0, 0.7);
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-}
-
-.subtitle object {
-  user-select: none;
-  display: block;
-  width: 24px;
-  height: auto;
-  pointer-events: none;
-}
-
-/* Ensure BOTH glows are strictly behind everything */
 .background-glow1, .background-glow2 {
   position: fixed;
-  z-index: -10; /* Force them to the very back */
+  z-index: -15; 
   pointer-events: none;
+  border-radius: 50%;
 }
 
 .background-glow1 {
@@ -133,8 +44,12 @@ body {
   left: 20%;
   width: 1054px;
   height: 1054px;
-  border-radius: 50%;
-  background: conic-gradient(from 177deg at 50% 50%, #2b6ed1 59.13deg, #062550 246.64deg, #88a3c7 360deg);
+  background: conic-gradient(
+    from 177deg at 50% 50%,
+    #2b6ed1 59.13deg,
+    #062550 246.64deg,
+    #88a3c7 360deg
+  );
   filter: blur(100px);
   transform: scale(0.8);
 }
@@ -144,153 +59,113 @@ body {
   left: 20%;
   width: 807px;
   height: 807px;
-  border-radius: 50%;
   background: linear-gradient(112deg, #44009b 0%, #2370ca 100%);
   filter: blur(200px);
   transform: scale(0.8);
 }
 
-.form-container {
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
   width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.title-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 90%;
+  max-width: 450px;
+  padding: 40px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: 32px;
+  border: var(--glass-border);
+  box-shadow: var(--shadow-main);
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+#title {
+  font-size: 32px;
+  font-weight: 700;
+  background: var(--text-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.8;
 }
 
 .form-container form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 28px;
-  width: 100%;
-  padding: 20px 0 10px 0; /* Reduced bottom padding to 10px */
-}
-
-.form-container input,
-.form-container button {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  line-height: 24px;
-  border-radius: 8px;
-  border: var(--glass-border);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-input);
-  transition: all 0.3s ease;
+  gap: 20px;
 }
 
 .form-container input {
+  width: 100%;
+  padding: 14px;
   background: var(--input-bg);
-  color: rgba(0, 0, 0, 0.8);
-}
-
-.form-container input:hover {
-  background: var(--input-focus);
+  border: var(--glass-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-input);
+  font-size: 16px;
+  transition: 0.3s;
 }
 
 .form-container input:focus {
   outline: none;
   background: var(--input-focus);
-  box-shadow: var(--shadow-input), var(--input-glow);
-  border-color: rgba(0, 122, 255, 0.4);
+  box-shadow: var(--input-glow);
 }
 
-.form-container input::placeholder {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.form-container input:focus::placeholder {
-  color: rgba(0, 0, 0, 0.2);
-}
-
-.form-container .icons {
-  position: absolute;
-}
-
-.form-container .icons i {
-  position: relative;
-}
-
-.form-container button {
-  position: relative;
-  z-index: 20;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--primary-btn);
-  color: #fff;
-  cursor: pointer;
-  border: none;
-
-  user-select: none;
-  -webkit-user-select: none; /* For Safari/Chrome */
-  -moz-user-select: none;    /* For Firefox */
-  -ms-user-select: none;     /* For IE/Edge */
-  -webkit-user-drag: none;
-}
-
-.form-container button:hover {
-  filter: brightness(1.1);
-  transform: translateY(-1px);
-  box-shadow: 0 5px 15px rgba(0, 122, 255, 0.4);
-}
-
-.form-container button:active {
-  transform: translateY(0);
-}
-
-.form-container #return-link {
-  background: none;
-  color: rgb(0, 60, 255);
-  box-shadow: none;
-  cursor: pointer;
-}
-
-/* Container to hold the input and the icon */
-.password-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-/* Position the icon container */
+.password-wrapper { position: relative; }
 .password-toggle {
   position: absolute;
-  right: 12px;
+  right: 15px;
   top: 50%;
   transform: translateY(-50%);
-  display: flex;
-  align-items: center;
   cursor: pointer;
-  z-index: 10;
-
-  color: rgba(0, 0, 0, 0.8);
-
-  user-select: none;
-  -webkit-user-select: none; /* For Safari/Chrome */
-  -moz-user-select: none;    /* For Firefox */
-  -ms-user-select: none;     /* For IE/Edge */
-  -webkit-user-drag: none;
-  
-  /* Prevent the blue 'tap' highlight on mobile */
-  -webkit-tap-highlight-color: transparent;
+  opacity: 0.5;
 }
 
-.password-toggle object {
-  width: 24px;
-  height: 24px;
-  pointer-events: none;
+button[name="login"] {
+  padding: 14px;
+  background: var(--primary-btn);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
 }
 
-.password-wrapper input {
-  padding-right: 45px !important;
+button[name="login"]:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
 }
 
-/* Fix the footer hit-box */
-.footer-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 10px;
-  pointer-events: none; /* Make the container 'invisible' to clicks */
-}
-
-.footer-container .footer {
-  pointer-events: auto; /* Allow the copyright text to be interactive if needed */
+.footer {
+  font-size: 12px;
+  opacity: 0.6;
+  text-align: center;
+  margin-top: 20px;
 }

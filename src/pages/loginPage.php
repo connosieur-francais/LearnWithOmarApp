@@ -23,10 +23,11 @@ function showError($error) {
     <title>Login to LearnWithOmar</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../components/backgrounds/stars.css">
 </head>
 
 <body>
-    <?php include __DIR__ . '../../components/backgrounds/wave_background.php'; ?>
+    <?php include __DIR__ . '../../components/backgrounds/stars.php'; ?> 
     <div class="background-glow1"></div>
     <div class="background-glow2"></div>
     <div class="content-container">
