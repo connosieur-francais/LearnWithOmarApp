@@ -26,7 +26,7 @@ function showError($error) {
 </head>
 
 <body>
-    <?php include __DIR__ . '../../components/wave_background.php'; ?>
+    <?php include __DIR__ . '../../components/backgrounds/wave_background.php'; ?>
     <div class="background-glow1"></div>
     <div class="background-glow2"></div>
     <div class="content-container">

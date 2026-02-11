@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnWithOmar | Background Implementation</title>
-    <link rel="stylesheet" href="/LearnWithOmarApp/src/css/wave_background.css">
+    <link rel="stylesheet" href="wave_background.css">
 </head>
 
 <body>

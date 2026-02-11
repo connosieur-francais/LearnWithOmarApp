@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #176ab1 0%, #cbd8f1 100%);
+}
+
+.nav-wrapper {
+  display: flex;
+  width: 80%;
+  max-width: 780px;
+  padding: 6px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-radius: 99px;
+  border: 1px solid var(--Light-Mode-Container-Border, rgba(255, 255, 255, 0.1));
+  background: var(
+    --Light-Mode-Container-Background,
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.5) 100%
+    )
+  );
+
+  /* Shadow-Blur/sm */
+  box-shadow:
+    0 1px 0 0 rgba(0, 0, 0, 0.05),
+    0 4px 4px 0 rgba(0, 0, 0, 0.05),
+    0 10px 10px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.button-text {
+  color: var(--Foreground-primary, #000);
+
+  /* Footnote/Medium */
+  font-family: var(--font, Inter);
+  font-size: var(--footnote, 14px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+}
+
+.logo-wrapper {
+  display: flex;
+  padding: 4px;
+  align-items: center;
+  gap: 4px;
+}
+
+.logo-text {
+  color: var(--Foreground-primary, #000);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.9px;
+}
+
+.icon object {
+  stroke-width: 1.5px;
+  stroke: var(--Foreground-primary, #000);
+  stroke-opacity: 1;
+}

@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
@@ -14,24 +14,10 @@ body {
   height: 100vh;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* This pulls the form to the vertical center */
+  justify-content: center;
   background: linear-gradient(135deg, #176ab1 0%, #cbd8f1 100%);
-  overflow: hidden;
-}
-
-.login_button {
-  width: fit-content;
-  height: fit-content;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  border-radius: 100vw;
-  background-color: antiquewhite;
-}
-
-.login_button:hover {
-  background-color: bisque;
+  padding: 40px 104px;
+  gap: 40px;
 }
 
 .footer {
