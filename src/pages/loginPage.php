@@ -43,7 +43,7 @@ function showError($error) {
             <div class="form-container">
                 <?= showError($errors['login']); ?>
                 <form action="../processes/loginProcess.php" method="post">
-                    <input type="email" name="email" placeholder="E-mail" autocomplete="off" required>
+                    <input type="text" name="email_or_name" placeholder="Email or Username" autocomplete="off" required>
                     <div class="password-wrapper">
                         <input type="password" name="password" class="pass" placeholder="Password" required>
                         <div class="password-toggle">
