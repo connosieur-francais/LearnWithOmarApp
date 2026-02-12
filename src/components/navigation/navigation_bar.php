@@ -12,7 +12,7 @@ $active_page = basename($_SERVER['PHP_SELF']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigation Bar</title>
-    <link rel="stylesheet" href="navigation_bar.css">
+    <link rel="stylesheet" href="navigation_bar.css?v=1.1">
 </head>
 
 <body>

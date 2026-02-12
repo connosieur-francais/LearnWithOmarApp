@@ -10,7 +10,7 @@ session_unset();
 
 function showError($error)
 {
-    return !empty($error) ? "<div class='error-message' style='width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; background: rgba(255, 68, 58, 0.65); border: 1px solid rgba(255, 69, 58, 0.3); color: rgba(255,255,255, 1); font-size: 14px; text-align: center; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); animation: fadeIn 0.3s ease-in-out;'>$error</div>" : '';
+    return !empty($error) ? "<div class='error-message' style='width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; background: rgba(255, 68, 58, 0.65); border: 2px solid rgba(255, 69, 58, 0.3); color: rgba(255,255,255, 1); font-size: 14px; text-align: center; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); animation: fadeIn 0.3s ease-in-out;'>$error</div>" : '';
 }
 
 include_once($_SERVER['DOCUMENT_ROOT'] . '/LearnWithOmarApp/src/setup/config.php');
@@ -23,8 +23,8 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/LearnWithOmarApp/src/setup/config.php
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login to LearnWithOmar</title>
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/login.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/components/backgrounds/stars.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/css/login.css?v=1.1">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/components/backgrounds/stars.css?v=1.1">
 </head>
 
 <body>
@@ -54,7 +54,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/LearnWithOmarApp/src/setup/config.php
                     </div>
                     <button type="submit" name="login">Log In</button>
                     <p>Don't have an account?
-                        <a id="return-link" href="<?php echo BASE_URL; ?>src/index.php">Return to Home Page</a>
+                        <a id="return-link" href="<?php echo BASE_URL; ?>index.php">Return to Home Page</a>
                     </p>
                 </form>
             </div>
