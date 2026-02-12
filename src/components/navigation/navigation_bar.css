@@ -79,7 +79,7 @@ body {
   letter-spacing: -0.9px;
 }
 
-.logo-text object {
+.object {
   stroke-width: 1.5px;
   stroke: var(--Foreground-primary, #000);
   stroke-opacity: 1;

@@ -2,6 +2,7 @@
 session_start();
 require_once __DIR__ . '/../setup/conn.php';
 
+include_once($_SERVER['DOCUMENT_ROOT'] . '/LearnWithOmarApp/src/setup/config.php');
 
 
 if (isset($_POST['login'])) {
@@ -27,16 +28,16 @@ if (isset($_POST['login'])) {
 
             switch ($user['user_role_id']) {
                 case 1:
-                    header("Location: ../pages/admin/home.php");
+                    header("Location: ". BASE_URL . "pages/admin/home.php");
                     break;
                 case 2:
-                    header("Location: ../pages/tutor/home.php");
+                    header("Location ". BASE_URL . "pages/tutor/home.php");
                     break;
                 case 3:
-                    header("Location: ../pages/student/home.php");
+                    header("Location: ". BASE_URL . "pages/student/home.php");
                     break;
                 default:
-                    header("Location: ../index.php");
+                    header("Location: ". BASE_URL . "index.php");
                     break;
             }
             exit();

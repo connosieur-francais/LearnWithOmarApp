@@ -1,15 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 :root {
-  --glass-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.5) 100%);
+  --glass-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
   --glass-border: 1px solid rgba(255, 255, 255, 0.1);
   --glass-blur: blur(20px);
-  --input-bg: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.05) 100%);
-  --input-focus: linear-gradient(0deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 100%);
+  --input-bg: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  --input-focus: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
   --primary-btn: #007aff;
-  --text-gradient: linear-gradient(300deg, #000 29.05%, #372054 84.15%, #5420a4 100.44%);
+  --text-gradient: linear-gradient(
+    300deg,
+    #000 29.05%,
+    #372054 84.15%,
+    #5420a4 100.44%
+  );
   --shadow-main: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
-  --shadow-input: 0 1px 0 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.05), 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+  --shadow-input:
+    0 1px 0 0 rgba(0, 0, 0, 0.05), 0 4px 4px 0 rgba(0, 0, 0, 0.05),
+    0 10px 10px 0 rgba(0, 0, 0, 0.1);
   --input-glow: 0 0 8px rgba(0, 122, 255, 0.3);
 }
 
@@ -25,16 +44,19 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: var(--Screen-horizontal-padding, 96px)
+    var(--Screen-vertical-padding, 96px);
   width: 100%;
   height: 100vh;
-  background: #176ab1; 
+  background: #176ab1;
   background: linear-gradient(135deg, #176ab1 0%, #cbd8f1 100%);
   overflow: hidden;
 }
 
-.background-glow1, .background-glow2 {
+.background-glow1,
+.background-glow2 {
   position: fixed;
-  z-index: -15; 
+  z-index: -15;
   pointer-events: none;
   border-radius: 50%;
 }
@@ -77,9 +99,13 @@ body {
 .title-form-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 24px;
-  width: 90%;
-  max-width: 450px;
+
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+
   padding: 40px;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
@@ -89,11 +115,19 @@ body {
   box-shadow: var(--shadow-main);
 }
 
+@media (max-width: 480px) {
+  .title-form-container {
+    padding: 24px;
+    width: 95%;
+  }
+}
+
 .title-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  width: 100%;
 }
 
 #title {
@@ -105,17 +139,36 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.subtitle {
+.subtitle-holder {
   display: flex;
   align-items: center;
-  gap: 8px;
-  opacity: 0.8;
+  gap: 10px;
+}
+
+#subtitle {
+  color: var(--Light-Mode-Content-Secondary, rgba(0, 0, 0, 0.7));
+
+  /* Body/Medium */
+  font-family: var(--font, Inter);
+  font-size: var(--body, 16px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
+
+.logo {
+  width: 24px;
+  height: 24px;
+  aspect-ratio: 1/1;
 }
 
 .form-container form {
   display: flex;
+  padding: 20px 10px;
   flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  gap: var(--Content-gap-extra-large, 28px);
+  align-self: stretch;
 }
 
 .form-container input {
@@ -135,7 +188,11 @@ body {
   box-shadow: var(--input-glow);
 }
 
-.password-wrapper { position: relative; }
+.password-wrapper {
+  align-self: stretch;
+  position: relative;
+}
+
 .password-toggle {
   position: absolute;
   right: 15px;
@@ -145,7 +202,14 @@ body {
   opacity: 0.5;
 }
 
+.password-toggle img {
+  display: block; /* Ensure it's not collapsed */
+  width: 24px; /* Match your HTML width */
+  height: 24px;
+}
+
 button[name="login"] {
+  width: 100%;
   padding: 14px;
   background: var(--primary-btn);
   color: white;
