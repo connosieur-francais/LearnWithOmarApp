@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #176ab1 0%, #cbd8f1 100%);
+}
+
+.nav-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  height: auto; /* Ensures the pill shape can expand vertically if needed */
+  width: 80%;
+  max-width: 780px;
+  padding: 6px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and Elder */
+  user-select: none; /* Standard syntax */
+
+  -webkit-tap-highlight-color: transparent;
+
+  -webkit-user-drag: none;
+
+  border-radius: 99px;
+  border: 1px solid var(--Light-Mode-Container-Border, rgba(255, 255, 255, 0.1));
+  background: var(
+    --Light-Mode-Container-Background,
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.5) 100%
+    )
+  );
+
+  /* Shadow-Blur/sm */
+  box-shadow:
+    0 1px 0 0 rgba(0, 0, 0, 0.05),
+    0 4px 4px 0 rgba(0, 0, 0, 0.05),
+    0 10px 10px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+@media screen and (max-width: 600px) {
+  .nav-wrapper {
+    gap: 12px;
+    padding-bottom: 12px;
+    border-radius: 24px; /* Slightly less rounded for a vertical look */
+    width: 90%; /* Give it more room on small/zoomed screens */
+  }
+
+  .logo-menu-wrapper {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-list {
+    gap: 4px;
+  }
+}
+
+.nav-item,
+.login-button {
+  white-space: nowrap; /* Prevents "About Me" from breaking into two lines */
+  flex-shrink: 0; /* Prevents the buttons from squishing */
+}
+
+.logo-menu-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.button-text {
+  color: var(--Foreground-primary, #000);
+
+  /* Footnote/Medium */
+  font-family: var(--font, Inter);
+  font-size: var(--footnote, 14px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+}
+
+.logo-wrapper {
+  display: flex;
+  padding: 4px;
+  align-items: center;
+  gap: 4px;
+}
+
+.logo-text {
+  color: var(--Foreground-primary, #000);
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.9px;
+}
+
+.object {
+  stroke-width: 1.5px;
+  stroke: var(--Foreground-primary, #000);
+  stroke-opacity: 1;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #000;
+  padding: 8px 16px;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent;
+
+  color: var(--Foreground-primary, #000);
+
+  /* Footnote/Medium */
+  font-family: var(--font, Inter);
+  font-size: var(--footnote, 14px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+}
+
+.nav-item.active {
+  border-radius: 99px;
+  border: 1px solid var(--Light-Mode-Container-Border, rgba(255, 255, 255, 0.1));
+  background: var(
+    --Light-Mode-Container-Background,
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.5) 100%
+    )
+  );
+
+  /* Shadow-Blur/sm */
+  box-shadow:
+    0 1px 0 0 rgba(0, 0, 0, 0.05),
+    0 4px 4px 0 rgba(0, 0, 0, 0.05),
+    0 10px 10px 0 rgba(0, 0, 0, 0.1);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.login-button {
+  display: flex;
+  height: var(--Button-size, 32px);
+  min-width: 32px;
+  padding: var(--Button-vertical-padding, 4px) var(--Button-horizontal-padding, 12px);
+  justify-content: center;
+  align-items: center;
+  gap: var(--Button-gap, 8px);
+  text-decoration: none;
+  
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Brighter border for glow transition */
+  background: var(--Light-Mode-Container-Background, linear-gradient(180deg, rgba(255, 255, 255, 0.80) 0%, rgba(255, 255, 255, 0.60) 100%));
+
+  /* Combined existing shadows + the new WHITE GLOW (the first value) */
+  box-shadow: 
+    0 0 15px rgba(255, 255, 255, 0.7), /* This is the outer glow */
+    0 1px 0 0 rgba(0, 0, 0, 0.05), 
+    0 4px 4px 0 rgba(0, 0, 0, 0.05), 
+    0 10px 10px 0 rgba(0, 0, 0, 0.10);
+    
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  color: var(--Foreground-primary, #000);
+  font-size: 14px;
+  font-weight: 600; /* Increased weight for emphasis */
+  white-space: nowrap;
+  
+  /* Update transition to include box-shadow for smooth glowing */
+  transition: transform 0.1s ease, filter 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Emphasize the glow even more on hover */
+.login-button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  /* Brighter, larger glow on hover */
+  box-shadow: 
+    0 0 25px rgba(255, 255, 255, 0.9), 
+    0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.login-button:active {
+  transform: translateY(0px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Ensure the icon scales with the button size */
+.button-icon {
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
