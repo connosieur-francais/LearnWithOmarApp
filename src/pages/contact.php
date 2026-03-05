@@ -1,23 +1,19 @@
-<!-- This is the home page (Anonymous User) -->
-
 <?php
-include __DIR__ . '/setup/conn.php';
 $doc_root_folder = $_SERVER['DOCUMENT_ROOT'] . '/LearnWithOmarApp';
-
+include ($doc_root_folder . '/src/setup/conn.php');
 include_once($doc_root_folder . '/src/setup/config.php');
-$current_page = 'home';
+$current_page = 'contact-me';
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>  
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LearnWithOmar</title>
+    <title>LearnWithOmar | Contact Me</title>
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/style.css">
-</head> 
-
+</head>
 <body>
     <header class="nav-bar">
         <?php include ROOT_PATH . 'components/navigation_bar.php'; ?>
@@ -32,5 +28,4 @@ $current_page = 'home';
         </div>
     </footer><!-- End of footer -->
 </body>
-
 </html>

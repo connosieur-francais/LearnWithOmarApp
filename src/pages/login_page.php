@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>LearnWithOmar | Log In</title>
 </head>
 <body>
-    <div class="content">
-        <h1>Tutor Page</h1>
-    </div>
+    <h1>Log In Page</h1>
+    <p>This is the log in page. You can log in here to access your account
 </body>
 </html>
