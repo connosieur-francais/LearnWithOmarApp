@@ -86,7 +86,7 @@ p.name {
   height: 2px;
   background-color: var(--Color-Palettes-Pink-pink-500, #e6398a);
   visibility: hidden;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .nav-link:hover::before,
