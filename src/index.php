@@ -17,6 +17,7 @@ $current_page = 'home';
     <title>LearnWithOmar</title>
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/style.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/home.css">
+    <link rel="icon" type="image/png" href="<?php echo BASE_URL; ?>resources/images/logo.png">
 </head> 
 
 <body>
