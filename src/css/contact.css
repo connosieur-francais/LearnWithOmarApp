@@ -7,9 +7,10 @@
   flex: 1 0 0;
   align-self: stretch;
 
-  background: var(--Color-Palettes-Pink-pink-300, #ff8bcb);
+  background:#ffadd0;
   animation: fadeIn 0.5s ease backwards;
 }
+
 
 .main-heading {
   color: #000;
@@ -112,19 +113,24 @@
   background: var(--Color-Palettes-Pink-pink-100, #ffd6e6);
 }
 
-.contact-form input, .contact-form textarea {
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+.contact-form input,
+.contact-form textarea {
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.contact-form input:hover, .contact-form textarea:hover {
-    border-color: var(--Color-Palettes-Pink-pink-700, #a11d5a);
-    box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.25);
+.contact-form input:hover,
+.contact-form textarea:hover {
+  border-color: var(--Color-Palettes-Pink-pink-700, #a11d5a);
+  box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.25);
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
-    outline: none;
-    border-color: var(--Color-Palettes-Pink-pink-700, #a11d5a);
-    box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.25);
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--Color-Palettes-Pink-pink-700, #a11d5a);
+  box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.25);
 }
 
 .button-submit {
@@ -133,6 +139,8 @@
   align-items: center;
   gap: 12px;
 
+  font-weight: 500;
+
   border-radius: 16px;
   border: 2px solid var(--Color-Palettes-Pink-pink-700, #a11d5a);
   background: var(--Color-Palettes-Pink-pink-300, #ff8bcb);
@@ -140,12 +148,12 @@
 }
 
 .button-submit:hover {
-    background: #f562a9;
+  background: #f562a9;
 }
 
 .button-submit:active {
-    background: #e6398a;
-    box-shadow: 0 1px 0 0 var(--Color-Palettes-Pink-pink-700, #a11d5a);
+  background: #e6398a;
+  box-shadow: 0 1px 0 0 var(--Color-Palettes-Pink-pink-700, #e6398a);
 }
 
 @keyframes fadeInUp {

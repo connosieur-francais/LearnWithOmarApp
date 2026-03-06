@@ -14,7 +14,6 @@
   padding: 0 96px;
   align-items: flex-start;
   gap: 16px;
-
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
@@ -86,7 +85,7 @@ p.name {
   height: 2px;
   background-color: var(--Color-Palettes-Pink-pink-500, #e6398a);
   visibility: hidden;
-  transition: 0.2s ease-in-out;
+  transition: 0.2s ease;
 }
 
 .nav-link:hover::before,

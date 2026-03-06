@@ -12,8 +12,8 @@ $current_page = 'contact-me';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LearnWithOmar | Contact Me</title>
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/style.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/contact.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/style.css?version=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/contact.css?version=<?php echo time(); ?>">
     <link rel="icon" type="image/png" href="<?php echo BASE_URL; ?>resources/images/logo.png">
 </head>
 
